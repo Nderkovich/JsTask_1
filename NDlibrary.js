@@ -3,7 +3,7 @@ function isArray(obj) {
 }
 
 function isBoolean(obj) {
-    return typeof (obj) == "boolean";
+    return typeof obj === "boolean";
 }
 
 function isDate(obj) {
@@ -11,19 +11,19 @@ function isDate(obj) {
 }
 
 function isNumber(obj) {
-    return typeof (pbj) == "number";
+    return typeof obj === "number";
 }
 
 function isString(obj) {
-    return typeof (obj) == "string";
+    return typeof obj === "string";
 }
 
 function isFunction(obj) {
-    return typeof (obj) == "function";
+    return typeof obj === "function";
 }
 
 function isUndefined(obj) {
-    return typeof (obj) == "undefined";
+    return typeof obj === "undefined";
 }
 
 function isNull(obj) {
@@ -35,30 +35,26 @@ function first(arr) {
 }
 
 function last(arr) {
-    return arr[arr.length];
+    return arr[arr.length - 1];
 }
 
 function take(arr, number) {
-    return Array.from(a).slice(0, number);
+    return Array.from(arr).slice(0, number);
 }
 
 function skip(arr, number) {
-    return Array.from(a).slice(number, a.length);
+    return Array.from(arr).slice(number, a.length);
 }
 
 function asChain(arr) {
 
-    var array = arr;
-
     return {
         skip: function (number) {
-            console.log(arr);
-            return asChain(skip(array, number));
+            return asChain(skip(arr, number));
         },
 
         take: function (number) {
-            console.log(arr);
-            return asChain(take(array, number));
+            return asChain(take(arr, number));
         }
     };
 }
