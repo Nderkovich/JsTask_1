@@ -39,11 +39,11 @@ function last(arr) {
 }
 
 function take(arr, number) {
-    return Array.from(arr).slice(0, number);
+    return arr.slice(0, number);
 }
 
 function skip(arr, number) {
-    return Array.from(arr).slice(number, a.length);
+    return arr.slice(number, arr.length);
 }
 
 function asChain(arr) {
